@@ -37,10 +37,11 @@ S3Route.route('/:bucketName').get(function(req, res){
     })
 })
 .post(function(req,res){
+    console.log(req.body)
     controller.AgregarFile({
         Bucket: req.params.bucketName,
-        Body: req.files.body.data,
-        ContentType: req.files.body.mimetype,
+        Body: req.files.Body.data,
+        ContentType: req.files.Body.mimetype,
         ...req.body
         }).then(function(data){
         res.send(data);
