@@ -16,16 +16,10 @@ class lista{
         return s3.listObjects(params).promise();
     }
     CreateBuck(bucketName){
-        var params = {
-            Bucket: bucket,
-            CreateBucketConfiguration:{
-             LocationConstraint: 'us-west-2'
-            }
-        };
-        
+                
         return new Promise(function(fulfill, reject){
 
-        s3.createBucket(params, function(err, data){
+        s3.createBucket(bucketName, function(err, data){
             
             if(err){
                 if(err.code == 'BucketAlreadyOwnedByYou'){
