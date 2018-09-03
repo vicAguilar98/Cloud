@@ -15,11 +15,11 @@ class lista{
          console.log(params);
         return s3.listObjects(params).promise();
     }
-    CreateBuck(bucketName){
+    CreateBuck(bucket){
                 
         return new Promise(function(fulfill, reject){
 
-        s3.createBucket(bucketName, function(err, data){
+        s3.createBucket(bucket, function(err, data){
             
             if(err){
                 if(err.code == 'BucketAlreadyOwnedByYou'){
