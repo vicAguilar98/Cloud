@@ -20,7 +20,7 @@ S3Route.route('/').get(function (req, res){
     controller.CreateBuck(req.body).then(function(data){
         res.send(data);
     }).catch(function(err){
-        res.send("ERROR");
+        res.send(err);
     })
    
 })
@@ -46,7 +46,10 @@ S3Route.route('/:bucketName').get(function(req, res){
         res.send(data);
     }).catch(function(err){
         res.send("No se agregó tu archivo")
+
+
     })
 })
+
 
 module.exports = S3Route;
