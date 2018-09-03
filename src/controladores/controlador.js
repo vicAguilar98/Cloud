@@ -23,7 +23,7 @@ class lista{
             }
         };
         
-        return new promise(function(fulfill, reject){
+        return new Promise(function(fulfill, reject){
 
         s3.createBucket(params, function(err, data){
             
